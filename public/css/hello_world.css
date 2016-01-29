@@ -1,0 +1,42 @@
+h1 {
+	color: red;
+}
+
+h2 { 
+	color: red;
+	text-decoration: underline;	
+}
+
+blockquote {
+	color: gray;
+}
+
+dl {
+	color: gray;
+}
+
+p {
+	color: gray;
+}
+
+ul {
+	color: gray;
+}
+
+ol {
+	color: gray;
+}
+
+table {
+	color: gray;
+}
+
+links {
+	color: gray;
+}
+
+body {
+	background-color: #e1e1ea;
+	background-image: url(http://thesource.com/wp-content/uploads/2015/03/James-Harden1.jpg);
+	background-repeat: repeat;
+}

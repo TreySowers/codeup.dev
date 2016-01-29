@@ -1,0 +1,52 @@
+h1 {
+	color:purple;
+	text-decoration: underline;
+	font-weight: bold;
+}
+
+div {
+	height:50px;
+	width: 50px;
+	border: 1px solid black;
+	padding: 11px;
+	color: white;
+	font-weight: bold;
+	float: left;
+}
+
+img {
+	position: relative;
+	top:-100px;
+	left:50px; 
+
+}
+.red {
+	background-color: red;
+	margin: 50px 0px 0;
+	position: relative;
+	
+}
+.orange {
+	background-color: orange;
+	margin: 50px 50px 0;
+	
+
+}
+.yellow {
+	background-color: yellow;
+	margin: 50px 0px 0;
+	
+}
+.green {
+	background-color: green;
+	margin: 50px 0px;
+	clear:left;
+}
+.blue{
+	background-color: blue;
+	margin: 50px 50px;
+}
+.purple{
+	background-color: purple;
+	margin: 50px 0px 0;
+}
