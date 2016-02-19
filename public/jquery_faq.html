@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FAQ</title>
+</head>
+<body>
+	<style>
+
+	.invisible {
+		display: none;
+	}
+
+	</style>
+	<h1>National Parks FAQ</h1>
+
+	<a href="#" id="toggle">Toggle</a>
+	<dl>
+		<dt>What is the largest national park?</dt>
+		<dd class="invisible">St. Elias National Park</dd>
+
+		<dt>What is the most visited national park?</dt>
+		<dd class="invisible">Great Smoky Mountains National Park</dd>
+
+		<dt>What is the difference between a national park and a national forest</dt>
+		<dd class="invisible">National parks are administered by the Department of the Interior and national forests by the Department of Agriculture. The National Park Service is mandated to preserve resources unimpaired, while the Forest Service is mandated to wisely manage resources for many sustainable uses. Six national forests surround Yellowstone National Park.</dd>
+
+		<dt>What is the Continental Divide?</dt>
+		<dd class="invisible">Think of the Continental Divide as the crest of the continent. Theoretically, when precipitation falls on the west side of the Divide, it eventually reaches the Pacific Ocean. When it falls on the east side of the Divide, it eventually reaches the Atlantic Ocean. In Yellowstone (as elsewhere), this ridgeline is not straight. You cross the Continental Divide three times between the South Entrance and the Old Faithful area. Craig Pass is the highest crossing, at 8,262 feet.</dd>
+
+		<dt>What government agency oversees the National Park Service?</dt>
+		<dd class="invisible">The National Park Service is a bureau of the Department of the Interior. Directly overseeing its operation is the Department's Assistant Secretary for Fish, Wildlife and Parks
+		</dd>
+
+		<dt>How many employees are in the National Park Service?</dt>
+		<dd class="invisible">Approximately 22,000</dd>
+
+		<dt>How many areas are in the National Park System?</dt>
+		<dd class="invisible">409 areas</dd>
+
+		<dt>What is the smallest national park site?</dt>
+		<dd class="invisible">Thaddeus Kosciuszko National Memorial</dd>
+
+		<dt>How many people visit the national parks?</dt>
+		<dd class="invisible">Total recreation visitors to the national parks in 2014: 292,800,082
+		</dd>
+
+		<dt>What is the National Park Service budget?</dt>
+		<dd class="invisible">2014 Enacted: $2.98 billion</dd>
+	</dl>
+
+	<h3>Yellowstone National Park</h3>
+
+	<ul>
+		<li>Established in 1872.</li>
+		<li>Railroad arrived in 1883, allowing easier visitor access.</li>
+		<li>First organized expedtition explored Yellowstone in 1870.</li>
+		<li>First Boundary adjustment of the park made in 1929.</li>		</ul>
+
+	<h3>Arches National Park</h3>
+	<ul>
+		<li>Located in Eastern Utah.</li>
+		<li>Contains over 2,000 natural sandstone arches.</li>
+		<li>43 arches have collapsed since 1977.</li>
+		<li>Lies atop an underground evaporite layer or salt bed.</li>
+	</ul>
+
+	<h3>Badlands National Prk</h3>
+	<ul>
+		<li>Located in Southwestern South Dakota</li>
+		<li>Protects 242,756 acres of sharply eroded buttes, pinnacles, and spires.</li>
+		<li>Managed by the National Park service.</li>
+		<li>For 11,000 years Native Americans have used the area for their hunting grounds.</li>
+	</ul>
+
+	<script <script src="/js/jquery.js"></script>
+
+	<script>
+	"use strict"
+
+	$(document).ready(function() {
+		$('a').click(function() {
+			$('dd').slideToggle(1000);	
+		})
+
+		var uls = $('ul');
+		uls.each(function() {
+			$(this).children().first().css('font-weight', 'bold');
+		})
+
+		$('h3').click(function() {
+			$(this).next().slideToggle(2000);
+		})
+
+		
+	});
+				
+
+	</script>
+
+</body>
+</html>

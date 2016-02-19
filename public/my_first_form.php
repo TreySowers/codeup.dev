@@ -66,7 +66,7 @@
         </section>
 
         <section class="multiple_choice_test">
-        <form>
+        <form method="POST" action="/my_first_form.php">
 
             <h2>Multiple Choice Test</h2>
 
@@ -118,7 +118,7 @@
         </section>
 
         <section class="select_testing">
-        <form>
+        <form method="POST" action="/my_first_form.php">
             <h2>Select Testing</h2>
 
             <label for="mac">Do you own a Mac? </label>

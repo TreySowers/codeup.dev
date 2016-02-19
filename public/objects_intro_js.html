@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Intro to Obects</title>
+</head>
+<body>
+	<script>
+	"use strict"
+		// todo:
+		// Create person object with firstName and lastName properties (set to your first and last name).
+		// var person = todo;
+		var person = {
+			firstName: "Trey",
+			lastName: "Sowers",
+
+			"sayHello": function() {
+				return 'Hello';
+			},
+
+			"getFirstNameAndLastName": function() {
+				return "Hello " + this.firstName + " " + this.lastName;
+			},
+
+			"sayHello": function() {
+				return "Hello from" + this.firstName + " " +this.lastName;
+			}
+
+		}	
+
+		console.log(person.getFirstAndLastName());
+			
+		// todo:
+		// Add a say hello method to the person object that alerts hello using the firstName and lastName properties.
+
+		// Say hello from the person object.
+		// person.sayHello();
+
+
+		
+
+	</script>
+
+</body>
+</html>

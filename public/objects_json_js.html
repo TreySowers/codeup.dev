@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Json Objects</title>
+</head>
+<body>
+	<script>
+	"use strict"
+
+			// todo:
+		// Create an array of objects that represent books.
+		// Each book should have a title and an author.
+		// The book author should be an object with a firstName and lastName.
+		// Be creative and add at least 5 books to the array
+		// var books = [todo];
+		
+			var books = [
+				{
+					"title" : "Choke",
+					"author" : {
+						"firstName" : "Chuck",
+						"lastName" : "Palanhuick"
+					}
+				},
+				{
+					"title" : "A Game of Thrones",
+					"author" : {
+						"firstName" : "George",
+						"lastName" : "RR Martin"
+						}
+				},
+				{
+					"title" : "The Sun Also Rises",
+					"author" : {
+						"firstName" : "Ernest",
+						"lastName" : "Hemingway"
+						}
+				},
+				{
+					"title" : "It",
+					"author" : {
+						"firstName" : "Stephen",
+						"lastName" : "King"
+						}
+				},
+				{
+					"title" : "The Things They Carried",
+					"author" : {
+						"firstName" : "Tim",
+						"lastName" : "O'Brien"
+					}
+				}
+			];
+				
+
+		// log out the books array
+		console.log(books);
+
+		// todo:
+		// Loop through the array of books using .forEach and print out the specified information about each one.
+		// start loop here
+		books.forEach(function(book, index, array) {
+		    console.log("Book #" + (index + 1));
+		    console.log("Title: " + book.title);
+		    console.log("Author: " + book.author.firstName + " " + book.author.lastName);
+		    console.log("--------");
+		 });
+		// end loop here
+
+		
+
+		//Objective is to assemble an array of strings that hold the entire info
+		//Step 1. Start with an empty array
+		var arrayOfStrings = [];
+
+		//Step 2. Iterate across our array of book objects
+		//Step 3. Concatenate pieces of string from the book object
+		//Step 4.  Push the concatenated string onto the arrayOfStrings array
+		var string = '';
+		books.forEach(function(book, index, array) {
+			string = book.title + ' was written by ' + book.author.firstName + " " + book.author.lastName;
+			arrayOfStrings.push(string);
+		});
+
+		
+		
+		
+		//Step 5.  Iterate across your new array to console.log each string
+		arrayOfStrings.forEach(function(string, index, array) {
+			console.log(string);
+		});
+
+			
+			
+
+	</script>
+</body>
+</html>

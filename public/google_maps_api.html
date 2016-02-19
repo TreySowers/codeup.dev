@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style type="text/css">
+        #map-canvas {
+            width: 770px;
+            height: 481px;
+        }
+    </style>
+</head>
+<body>
+    <div id="map-canvas"></div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAP9ajxYdOUTiGEF5N-u_MVUurqUBfkl-M"></script>
+
+    <script type="text/javascript">
+        (function() {
+            "use strict";
+
+            var mapOptions = {
+            	zoom: 15,
+            };
+
+            var address = "2704 Navigation Blvd, Houston, Tx 77003";
+
+            var marker;
+
+            var geocoder = new google.maps.Geocoder();
+
+            geocoder.geocode({ "address": address }, function(results, status) {
+
+               if (status == google.maps.GeocoderStatus.OK) {
+
+                   map.setCenter(results[0].geometry.location);
+               } else {
+
+                   alert("Geocoding was not successful - STATUS: " + status);
+               }
+            });
+
+            geocoder.geocode({ "address": "2704 Navigation Blvd, Houston, Tx 77003" }, function(results, status) {
+
+               if (status == google.maps.GeocoderStatus.OK) {
+
+                   // map.setCenter(results[0].geometry.location);
+                   marker = new google.maps.Marker({
+                        position: results[0].geometry.location,
+                        map: map
+                    });
+                   var infowindow = new google.maps.InfoWindow({
+                        content: "Ninfa's on Navigation"
+                   });
+
+                   infowindow.open(map, marker);
+               } else {
+
+                   alert("Geocoding was not successful - STATUS: " + status);
+               }
+
+            });
+
+            var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+        })();
+    </script>
+</body>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>While Loop</title>
+</head>
+<body>
+	<script>
+	"use strict";
+
+		var number = 2;
+
+		while (number <= 65536) {
+			console.log(number);
+			number = number * 2;
+		}
+		//bonus: iterate by 1 from 1 to 100, but only output odd numbers
+	//requirement2: iterate by 1 from 100 to 1, out put only even numbers
+	//(i % 2 == 0), i is even if this returns true
+	//use conditionals unless we want code to run unconditionally
+
+		 var number = 1;
+
+		while(number <= 100) {
+			if(number % 2 != 0) {
+				console.log(number);
+			}
+
+			number += 1;
+		}
+
+		var number = 100;
+
+		while (number >= 1) {
+			if(number % 2 == 0) {
+				console.log(number);
+			}
+
+			number -= 1;
+		}
+
+	</script>
+
+</body>
+</html>

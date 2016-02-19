@@ -1,42 +1,38 @@
-h1 {
-	color: red;
-}
-
-h2 { 
-	color: red;
-	text-decoration: underline;	
-}
-
-blockquote {
-	color: gray;
-}
-
-dl {
-	color: gray;
-}
-
-p {
-	color: gray;
-}
-
-ul {
-	color: gray;
-}
-
-ol {
-	color: gray;
-}
-
-table {
-	color: gray;
-}
-
-links {
-	color: gray;
+h1, h2 {
+	color: #CE1141;
+	text-decoration: underline;
 }
 
 body {
-	background-color: #e1e1ea;
-	background-image: url(http://thesource.com/wp-content/uploads/2015/03/James-Harden1.jpg);
-	background-repeat: repeat;
+	background-color: #888888;
+	background-image: url(/img/james_harden.jpg);
+	background-size: 25%;
+	color: #C4CED3;
+	font-style: oblique;
+}
+
+ul {
+	list-style: circle;
+}
+
+table {
+	font-style: italic;
+	font-size: 12px;
+	padding: 25px;
+}
+
+a:link {
+	color: #C4CED3;
+}
+
+a:visited {
+	color: #CE1141;
+}
+
+a:hover {
+	color: #FFFFFF;
+}
+
+a:active {
+	color: #FF0000;
 }

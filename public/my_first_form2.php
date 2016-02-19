@@ -75,7 +75,7 @@
 			<p><button type="submit">Submit</button></p>
 		</form>
 
-		<form>
+		<form method="POST" action="/my_first_form.php">
 			<p>What gaming systems have you used?</p>
 			<p><label><input type="checkbox" id="gs1" name="gs[]" value="nintendo"> Nintendo</label></p>
 			<p><label><input type="checkbox" id="gs2" name="gs[]" value="xbox">Xbox</label></p>
@@ -84,9 +84,9 @@
 			<p><button type="submit">Submit</button></p>
 		</form>
 
-		<form>
+		<form method="POST" action="/my_first_form.php">
 			<label for="sports">What sports have you played?</label>
-			<select id="sports" name="sports[]">
+			<select id="sports" name="sports[]" multiple>
 				<p><option value="basketball">Basketball</option></p>
 				<p><option value="hockey">Hockey</option></P>
 				<p><option value="soccer">Soccer</option></p>
@@ -98,7 +98,7 @@
 
 	<section class="select_testing">
 		<h2>Select Testing</h2>
-		<form>
+		<form method="POST" action="/my_first_form.php">
 			<label for="challenging">Is Codeup challenging?</label>
 			<select id="challenging" name ="challenging">
 				<option value="1">Yes</option>
