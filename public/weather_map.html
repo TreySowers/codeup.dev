@@ -23,9 +23,11 @@
 
 </head>
 <body>
-<main class="container">
+<main id="container">
 
 	<h1>Weather Application</h1>
+    <input id="addressForm" type="text" name="latitude" placeholder="Input address"> </input>
+    <input id="addAddress" type="submit" value="Submit"></input>
 
     <h3 id="your_city"></h3>
 </main>
@@ -37,6 +39,8 @@
 	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 	<script>
 		"use strict"
+         var addressInput = "600 navarro, 78205";
+         getWeather()
         function handleForecastData(data) {
             console.log(data);
             var contentString = '';
@@ -53,26 +57,43 @@
                 contentString += "<p>Wind: " + forecast.wind.speed + "</p>";
                 contentString += "</div>";
             });
+                return contentString;
 
-            contentString += "<form>";
-            contentString += "<input type=\"text\" name=\"latitude\" placeholder=\"Lat\">" + "<input type=\"text\" name=\"longitude\" placeholder=\"Lng\">" + "<input type=\"submit\" value=\"Submit\">";
-            contentString += "</form>";
-            $('main').append(contentString);
+            // contentString += "<form>";
+            // contentString += "<input id=\"addressForm\" type=\"text\" name=\"latitude\" placeholder=\"Input address\">"  + "<input id=\"addAddress\" type=\"submit\" value=\"Submit\">";
+            // contentString += "</form>";
+       
          } 
+         $('#addAddress').on("click",function(event){
 
-		$.get("http://api.openweathermap.org/data/2.5/forecast", {
+            addressInput = $("#addressForm").val();
+            getWeather()
+             console.log(addressInput)
+         })
+         $('#addressForm').keydown(function(event){
+            if (event.keyCode == 13) {
+                 addressInput = $("#addressForm").val();
+                 getWeather()
+                  console.log(addressInput)
+            };
+           
+         })
+
+		function getWeather(){
+            $.get("http://api.openweathermap.org/data/2.5/forecast", {
     		APPID: "71ad0abe818246e8585d2f70460155f1",
-    		id:     4726206,
+    		q:     addressInput,
     		units: "imperial",
     		cnt: 3
     	   }).done(function(data) {
-            handleForecastData(data); 
-              
-
+          
+            console.log(handleForecastData(data));
+            $("main").append(handleForecastData) 
   
 		}).fail(function(data) {
             console.log(data);
         });
+    }
     
         var mapOptions = {
             
@@ -83,24 +104,47 @@
                 lng: -98.492433
             }
         };
-        
-        var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
-        
-        // var marker;
-        // var address = "San Antonio, TX"
 
-        // var geocoder = new google.maps.Geocoder();
+        var addressHome = addressInput;
 
-        // geocoder.geocode({ "address": address }, function(results, status) {
+            var marker;
 
-        //    if (status == google.maps.GeocoderStatus.OK) {
-        //        map.setCenter(results[0].geometry.location);
-        //    } else {
+            var geocoder = new google.maps.Geocoder();
 
-        //        alert("Geocoding was not successful - STATUS: " + status);
-        //    }
-        // });
- 
+            geocoder.geocode({ "address": addressHome }, function(results, status) {
+
+               if (status == google.maps.GeocoderStatus.OK) {
+
+                   map.setCenter(results[0].geometry.location);
+               } else {
+
+                   alert("Geocoding was not successful - STATUS: " + status);
+               }
+            });
+
+            geocoder.geocode({ "address": addressHome }, function(results, status) {
+
+               if (status == google.maps.GeocoderStatus.OK) {
+
+                   marker = new google.maps.Marker({
+                        position: results[0].geometry.location,
+                        map: map,
+                        draggable: true,
+                        animation: google.maps.Animation.Bounce
+                    });
+
+                   marker.addListener('dragend', function() {
+                        map.setZoom(4);
+                        map.setCenter(marker.getPosition());
+                    });
+
+               } else {
+
+                   alert("Geocoding was not successful - STATUS: " + status);
+               }
+            });          
+
+        var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions); 
         
     </script>
 
