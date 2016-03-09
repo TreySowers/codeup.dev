@@ -1,13 +1,17 @@
 <?php
 
+require_once "functions.php";
+
 function pageController() {
-	if(isset($_GET['counter'])) {
-		$counter = $_GET['counter'];
+	if(inputHas('counter')) {
+		$counter = inputGet('counter');
 	} else {
 		$counter = 0;
 	}
 
-return($_GET);
+return array(
+	'counter'=>$counter
+	);
 }
 
 extract(pageController());
